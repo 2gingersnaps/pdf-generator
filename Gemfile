@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record
