@@ -1,17 +1,3 @@
-# WickedPdf.config = {
-
-################avoid error message############################
-#
-###############################################################
-  
-  #:wkhtmltopdf => '/usr/local/bin/wkhtmltopdf',
-  #:layout => "pdf.html",
-  # :exe_path => '/usr/local/bin/wkhtmltopdf'
-
-################accommodate OSX Yosemite dev env###############
-#
-###############################################################
-
 module WickedPdfHelper
   if Rails.env.development?
     if RbConfig::CONFIG['host_os'] =~ /linux/
@@ -23,7 +9,6 @@ module WickedPdfHelper
       raise 'Invalid platform. Must be running linux or intel-based Mac OS.'
     end
 
-    WickedPdf.config = { exe_path: "#{Gem.bin_path('wkhtmltopdf-binary').match(/(.+)\/.+/).captures.first}/#{executable}" }
-  end
-end
-# }
+    WickedPdf.config = { exe_path:
+"#{Gem.bin_path('wkhtmltopdf-binary').match(/(.+)\/.+/).captures.first}/#{executable}"
+}
